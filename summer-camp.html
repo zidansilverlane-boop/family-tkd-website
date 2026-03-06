@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summer Camp | Family Taekwondo School - Miami, FL</title>
+    <link rel="icon" type="image/avif" href="assets/logo.avif">
+    <meta name="description" content="Action-packed summer martial arts camp for kids in Miami. Taekwondo training, games, character development, and fun activities at Family Taekwondo School.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1E3A8A;
+            --primary-dark: #1E2D5B;
+            --secondary: #DC2626;
+            --secondary-dark: #B91C1C;
+            --accent: #FFBB02;
+            --accent-dark: #E5A800;
+            --dark: #0F172A;
+            --light: #F8FAFC;
+            --gray-100: #F1F5F9;
+            --gray-200: #E2E8F0;
+            --gray-300: #CBD5E1;
+            --gray-500: #64748B;
+            --gray-700: #334155;
+            --white: #FFFFFF;
+            --orange: #FF6B35;
+            --orange-dark: #E55A2B;
+
+            --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            --gradient-gold: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            --gradient-orange: linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%);
+
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.15);
+            --shadow-lg: 0 10px 40px rgba(0,0,0,0.2);
+            --shadow-gold: 0 4px 20px rgba(255, 187, 2, 0.3);
+
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-full: 50px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0.75rem 2rem;
+            background: transparent;
+            transition: all 0.4s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow-md);
+            padding: 0.5rem 2rem;
+        }
+
+        nav.scrolled .logo { color: var(--primary); }
+        nav.scrolled .logo-text span { color: var(--secondary); }
+        nav.scrolled .nav-links a { color: var(--dark); }
+        nav.scrolled .nav-links a:hover { color: var(--primary); }
+
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: color 0.3s ease;
+        }
+
+        .logo-icon {
+            width: 65px;
+            height: 65px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .logo:hover .logo-icon {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 8px rgba(255, 187, 2, 0.5));
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-text span {
+            color: var(--accent);
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after { width: 100%; }
+
+        .nav-cta {
+            background: var(--gradient-gold) !important;
+            color: #FFFFFF !important;
+            padding: 0.75rem 1.5rem !important;
+            border-radius: var(--radius-full);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .nav-cta::after { display: none !important; }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            border-radius: 2px;
+        }
+
+        nav.scrolled .mobile-menu-btn span { background: var(--accent); }
+
+        .page-hero {
+            background: var(--gradient-orange);
+            padding: 10rem 2rem 6rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -2px; left: 0; right: 0;
+            height: 100px;
+            background: var(--light);
+            clip-path: polygon(0 100%, 100% 100%, 100% 0);
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--white);
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .page-hero h1 span { color: var(--secondary); }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section { padding: 6rem 2rem; }
+        .section-alt { background: var(--gray-100); }
+        .container { max-width: 1200px; margin: 0 auto; }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .intro-content h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        .intro-content h2 span { color: var(--orange); }
+
+        .intro-content p {
+            font-size: 1.1rem;
+            color: var(--gray-700);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .intro-visual {
+            aspect-ratio: 4/3;
+            background: var(--gradient-orange);
+            border-radius: var(--radius-lg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            box-shadow: var(--shadow-lg);
+            color: var(--white);
+        }
+
+        .intro-visual span.label {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .intro-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .intro-visual:hover img {
+            transform: scale(1.05);
+        }
+
+        .activities-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .activities-header span {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--orange);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .activities-header h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            margin-bottom: 0.5rem;
+        }
+
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .activity-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .activity-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 107, 53, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .activity-card:hover .activity-icon {
+            background: var(--orange);
+            color: var(--white);
+            transform: scale(1.1);
+        }
+
+        .activity-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .activity-card p {
+            color: var(--gray-500);
+            font-size: 0.9rem;
+        }
+
+        .details-section {
+            background: var(--gradient-primary);
+            padding: 6rem 2rem;
+            color: var(--white);
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .details-content h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            margin-bottom: 2rem;
+        }
+
+        .details-content h2 span { color: var(--secondary); }
+
+        .detail-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-md);
+        }
+
+        .detail-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .detail-text h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+            color: var(--white);
+        }
+
+        .detail-text p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+        }
+
+        .details-form {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+        }
+
+        .details-form h3 {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            border: 2px solid var(--gray-200);
+            border-radius: var(--radius-sm);
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--orange);
+        }
+
+        /* Form Error Styles */
+        .form-group.has-error input,
+        .form-group.has-error select {
+            border-color: #DC2626;
+            background-color: #FEF2F2;
+        }
+
+        .form-group.has-error input:focus,
+        .form-group.has-error select:focus {
+            border-color: #DC2626;
+            box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.1);
+        }
+
+        .error-message {
+            display: none;
+            font-size: 0.85rem;
+            color: #DC2626;
+            margin-top: 0.5rem;
+        }
+
+        .form-group.has-error .error-message {
+            display: block;
+        }
+
+        .required {
+            color: #DC2626;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: var(--radius-full);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn-orange {
+            background: var(--gradient-orange);
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(255, 107, 53, 0.3);
+        }
+
+        .btn-orange:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-primary {
+            background: var(--gradient-gold);
+            color: var(--dark);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(255, 187, 2, 0.4);
+        }
+
+        .cta-section {
+            padding: 5rem 2rem;
+            text-align: center;
+            background: var(--gradient-primary);
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            color: var(--white);
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-section .btn { width: auto; }
+
+        footer {
+            background: #0D0D0D;
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand .logo { color: var(--white); margin-bottom: 1rem; }
+        .footer-brand p { color: rgba(255, 255, 255, 0.75); font-size: 0.95rem; line-height: 1.7; }
+        .footer-column h4 { font-size: 1rem; margin-bottom: 1.5rem; color: var(--secondary); }
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 0.75rem; }
+        .footer-column a { color: rgba(255, 255, 255, 0.75); text-decoration: none; font-size: 0.95rem; transition: all 0.3s ease; }
+        .footer-column a:hover { color: var(--secondary); }
+        .footer-contact-item { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem; color: rgba(255, 255, 255, 0.75); font-size: 0.95rem; }
+        .footer-contact-item svg { flex-shrink: 0; margin-top: 3px; }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p { color: rgba(255, 255, 255, 0.4); font-size: 0.9rem; }
+        .social-links { display: flex; gap: 1rem; }
+        .social-link {
+            width: 40px; height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .social-link:hover { background: var(--orange); transform: translateY(-3px); }
+
+        @media (max-width: 1024px) {
+            .intro-grid, .details-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .intro-visual { max-width: 500px; margin: 0 auto; }
+            .activities-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: flex; }
+            .page-hero { padding: 8rem 1.5rem 4rem; }
+            .section { padding: 4rem 1.5rem; }
+            .activities-grid { grid-template-columns: 1fr; }
+            .details-section { padding: 4rem 1.5rem; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+
+        /* ============================================
+           ACCESSIBILITY - Focus Indicators
+           ============================================ */
+        a:focus,
+        button:focus,
+        input:focus,
+        select:focus,
+        textarea:focus,
+        [tabindex]:focus {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        a:focus:not(:focus-visible),
+        button:focus:not(:focus-visible) {
+            outline: none;
+        }
+
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        select:focus-visible,
+        textarea:focus-visible,
+        [tabindex]:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .skip-to-content {
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: var(--primary);
+            padding: 1rem 2rem;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            text-decoration: none;
+            z-index: 10000;
+            transition: top 0.3s ease;
+        }
+
+        .skip-to-content:focus {
+            top: 10px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+            color: white;
+            animation: popIn 0.5s ease;
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0); }
+            80% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .success-message h3 {
+            font-size: 1.8rem;
+            color: var(--orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .success-message p {
+            color: var(--gray-500);
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <nav id="navbar" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><img src="assets/logo.avif" alt="Family Taekwondo School Logo" width="65" height="65"></span>
+                <div class="logo-text">Family TKD<span>School</span></div>
+            </a>
+            <ul class="nav-links" id="mobileNav">
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html" class="nav-cta">Free Trial</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main-content">
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <h1>Summer of <span>Champions</span></h1>
+            <p>Action-packed martial arts camp for young warriors</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="intro-grid">
+                <div class="intro-content">
+                    <h2>An Unforgettable <span>Summer</span> Adventure</h2>
+                    <p>Give your child a summer they'll never forget! Our Summer Camp combines traditional Taekwondo training with fun activities, games, and character development in a safe, supervised environment.</p>
+                    <p>Whether your child is a martial arts veteran or trying Taekwondo for the first time, our experienced instructors ensure every camper has a blast while learning valuable skills that last a lifetime.</p>
+                    <p>From morning warm-ups to afternoon games, every day is filled with excitement, friendship, and personal growth.</p>
+                </div>
+                <div class="intro-visual">
+                    <img src="assets/images/summer-camp-registration.jpg" alt="Family Taekwondo School Summer Camp 2025 - kids having fun learning martial arts" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container">
+            <div class="activities-header">
+                <span>Daily Activities</span>
+                <h2>What Campers Experience</h2>
+            </div>
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <div class="activity-icon">&#129352;</div>
+                    <h3>Taekwondo Training</h3>
+                    <p>Daily martial arts instruction with belts and forms</p>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon">&#127942;</div>
+                    <h3>Games & Sports</h3>
+                    <p>Fun team activities and friendly competitions</p>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon">&#128218;</div>
+                    <h3>Character Education</h3>
+                    <p>Life skills, leadership, and anti-bullying lessons</p>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon">&#127912;</div>
+                    <h3>Arts & Crafts</h3>
+                    <p>Creative projects and hands-on activities</p>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon">&#128588;</div>
+                    <h3>Hip Hop Dance</h3>
+                    <p>Learn cool moves and express yourself</p>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon">&#127881;</div>
+                    <h3>Theme Days</h3>
+                    <p>Special events and costume days</p>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon">&#129309;</div>
+                    <h3>Team Building</h3>
+                    <p>Friendship and cooperation activities</p>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon">&#127846;</div>
+                    <h3>Snack Time</h3>
+                    <p>Healthy snacks and hydration breaks</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="details-section">
+        <div class="container">
+            <div class="details-grid">
+                <div class="details-content">
+                    <h2>Camp <span>Details</span></h2>
+                    <div class="detail-item">
+                        <div class="detail-icon">&#128197;</div>
+                        <div class="detail-text">
+                            <h4>Sessions Available</h4>
+                            <p>Weekly sessions throughout June, July, and August. Flexible enrollment options.</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon">&#128336;</div>
+                        <div class="detail-text">
+                            <h4>Camp Hours</h4>
+                            <p>Monday - Friday, 8:00 AM - 5:00 PM. Early drop-off and late pickup available.</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon">&#128102;</div>
+                        <div class="detail-text">
+                            <h4>Ages</h4>
+                            <p>Open to children ages 5-12. All skill levels welcome!</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon">&#127873;</div>
+                        <div class="detail-text">
+                            <h4>What to Bring</h4>
+                            <p>Lunch, water bottle, sunscreen, comfortable clothes. Uniform provided if enrolled.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="details-form">
+                    <h3>Reserve Your Spot</h3>
+                    <form id="campForm">
+                        <div class="form-group">
+                            <label for="parentName">Parent/Guardian Name <span class="required">*</span><span class="sr-only">(required)</span></label>
+                            <input type="text" id="parentName" required aria-required="true" placeholder="Your full name">
+                            <span class="error-message" id="parentName-error">Please enter your name</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="childName">Child's Name <span class="required">*</span><span class="sr-only">(required)</span></label>
+                            <input type="text" id="childName" required aria-required="true" placeholder="Child's full name">
+                            <span class="error-message" id="childName-error">Please enter the child's name</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="childAge">Child's Age <span class="required">*</span><span class="sr-only">(required)</span></label>
+                            <input type="number" id="childAge" min="5" max="12" required aria-required="true" placeholder="Age">
+                            <span class="error-message" id="childAge-error">Please enter a valid age (5-12)</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number <span class="required">*</span><span class="sr-only">(required)</span></label>
+                            <input type="tel" id="phone" required aria-required="true" placeholder="(305) 000-0000">
+                            <span class="error-message" id="phone-error">Please enter a valid phone number</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="session">Preferred Session <span class="required">*</span><span class="sr-only">(required)</span></label>
+                            <select id="session" required aria-required="true">
+                                <option value="">Select a session</option>
+                                <option value="june1">June 9-13, 2025</option>
+                                <option value="june2">June 16-20, 2025</option>
+                                <option value="june3">June 23-27, 2025</option>
+                                <option value="july1">July 7-11, 2025</option>
+                                <option value="july2">July 14-18, 2025</option>
+                                <option value="july3">July 21-25, 2025</option>
+                                <option value="august1">August 4-8, 2025</option>
+                                <option value="august2">August 11-15, 2025</option>
+                            </select>
+                            <span class="error-message" id="session-error">Please select a session</span>
+                        </div>
+                        <button type="submit" class="btn btn-orange">Request Info</button>
+                        <p class="form-note" style="font-size: 0.85rem; color: var(--gray-500); margin-top: 1rem; text-align: center;">We'll contact you within 24 hours to confirm your registration.</p>
+                    </form>
+
+                    <!-- Success Message -->
+                    <div class="success-message" id="successMessage">
+                        <div class="success-icon">&#10004;</div>
+                        <h3>Registration Received!</h3>
+                        <p>Thank you for your interest. We'll contact you within 24 hours to confirm your registration.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Questions About Summer Camp?</h2>
+            <p>Call us today to learn more about our program, pricing, and available sessions.</p>
+            <a href="tel:+13052259779" class="btn btn-primary">Call (305) 225-9779</a>
+        </div>
+    </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo"><span class="logo-icon"><img src="assets/logo.avif" alt="Family Taekwondo School Logo" width="65" height="65"></span><div class="logo-text">Family TKD<span>School</span></div></a>
+                <p>Building champions and transforming lives through traditional Korean Olympic Taekwondo since 2001.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Programs</h4>
+                <ul>
+                    <li><a href="programs.html#little-ninjas">Little Ninjas</a></li>
+                    <li><a href="programs.html#kids">Kids & Teens</a></li>
+                    <li><a href="programs.html#adults">Adults</a></li>
+                    <li><a href="special-needs.html">Special Needs</a></li>
+                    <li><a href="summer-camp.html">Summer Camp</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="schedule.html">Class Schedule</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <div class="footer-contact-item">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zM4.5 7.5a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7z"/></svg>
+                    <span>11940 SW 8th Street<br>Miami, FL 33184</span>
+                </div>
+                <div class="footer-contact-item">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/></svg>
+                    <span>(305) 225-9779</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Family Taekwondo School. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/family_taekwondo_school/" class="social-link" aria-label="Instagram">
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
+        });
+
+        // Form Validation
+        const form = document.getElementById('campForm');
+
+        function showError(fieldId, show) {
+            const field = document.getElementById(fieldId);
+            const formGroup = field.closest('.form-group');
+            if (show) {
+                formGroup.classList.add('has-error');
+                field.setAttribute('aria-invalid', 'true');
+            } else {
+                formGroup.classList.remove('has-error');
+                field.removeAttribute('aria-invalid');
+            }
+        }
+
+        function validateField(field) {
+            const value = field.value.trim();
+            let isValid = true;
+
+            if (field.hasAttribute('required') && !value) {
+                isValid = false;
+            } else if (field.type === 'tel' && value) {
+                const digits = value.replace(/\D/g, '');
+                isValid = digits.length >= 10;
+            } else if (field.type === 'number') {
+                const num = parseInt(value);
+                const min = parseInt(field.getAttribute('min') || 0);
+                const max = parseInt(field.getAttribute('max') || 999);
+                isValid = !isNaN(num) && num >= min && num <= max;
+            }
+
+            showError(field.id, !isValid);
+            return isValid;
+        }
+
+        // Add blur validation to required fields
+        form.querySelectorAll('input[required], select[required]').forEach(field => {
+            field.addEventListener('blur', function() {
+                validateField(this);
+            });
+
+            field.addEventListener('input', function() {
+                if (this.closest('.form-group').classList.contains('has-error')) {
+                    validateField(this);
+                }
+            });
+        });
+
+        // Form submission with validation
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            let isFormValid = true;
+
+            this.querySelectorAll('input[required], select[required]').forEach(field => {
+                if (!validateField(field)) {
+                    isFormValid = false;
+                }
+            });
+
+            if (isFormValid) {
+                // Hide form and show success message
+                this.style.display = 'none';
+                document.getElementById('successMessage').classList.add('show');
+                console.log('Summer camp form submitted');
+            } else {
+                const firstError = this.querySelector('.has-error input, .has-error select');
+                if (firstError) {
+                    firstError.focus();
+                }
+            }
+        });
+    
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        if (mobileMenuBtn && mobileNav) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuBtn.classList.toggle('active');
+                mobileNav.classList.toggle('active');
+                mobileMenuBtn.setAttribute('aria-expanded', mobileNav.classList.contains('active'));
+                document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+            });
+            mobileNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuBtn.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+    </script>
+</body>
+</html>

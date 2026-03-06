@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Free Trial | Family Taekwondo School - Miami, FL</title>
+    <link rel="icon" type="image/avif" href="assets/logo.avif">
+    <meta name="description" content="Book your free trial class at Family Taekwondo School in Miami. Contact us at (305) 225-9779 or visit us at 11940 SW 8th Street, Miami, FL 33184.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1E3A8A;
+            --primary-dark: #1E2D5B;
+            --primary-light: #3B5CB8;
+            --secondary: #DC2626;
+            --secondary-dark: #B91C1C;
+            --accent: #FFBB02;
+            --accent-dark: #E5A800;
+            --dark: #0F172A;
+            --light: #F8FAFC;
+            --gray-100: #F1F5F9;
+            --gray-200: #E2E8F0;
+            --gray-300: #CBD5E1;
+            --gray-500: #64748B;
+            --gray-700: #334155;
+            --white: #FFFFFF;
+
+            --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            --gradient-gold: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            --gradient-hero: linear-gradient(135deg, var(--primary) 0%, #0D2B4A 100%);
+
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.15);
+            --shadow-lg: 0 10px 40px rgba(0,0,0,0.2);
+            --shadow-gold: 0 4px 20px rgba(255, 187, 2, 0.3);
+
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-full: 50px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0.75rem 2rem;
+            background: transparent;
+            transition: all 0.4s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow-md);
+            padding: 0.5rem 2rem;
+        }
+
+        nav.scrolled .logo {
+            color: var(--primary);
+        }
+
+        nav.scrolled .logo-text span {
+            color: var(--secondary);
+        }
+
+        nav.scrolled .nav-links a {
+            color: var(--dark);
+        }
+
+        nav.scrolled .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: color 0.3s ease;
+        }
+
+        .logo-icon {
+            width: 65px;
+            height: 65px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .logo:hover .logo-icon {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 8px rgba(255, 187, 2, 0.5));
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-text span {
+            color: var(--accent);
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--gradient-gold) !important;
+            color: #FFFFFF !important;
+            padding: 0.75rem 1.5rem !important;
+            border-radius: var(--radius-full);
+            box-shadow: var(--shadow-gold);
+            transition: all 0.3s ease !important;
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(255, 187, 2, 0.4);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled .mobile-menu-btn span {
+            background: var(--accent);
+        }
+
+        /* Page Hero */
+        .page-hero {
+            background: var(--gradient-hero);
+            padding: 10rem 2rem 6rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: var(--light);
+            clip-path: polygon(0 100%, 100% 100%, 100% 0);
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--white);
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .page-hero h1 span {
+            color: var(--secondary);
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 6rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Contact Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            padding: 2rem 0;
+        }
+
+        .contact-info h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .contact-info h2 span {
+            color: var(--primary);
+        }
+
+        .contact-intro {
+            font-size: 1.1rem;
+            color: var(--gray-700);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        .contact-details {
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+            padding: 1.25rem;
+            background: var(--white);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateX(5px);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .contact-text h4 {
+            font-size: 0.9rem;
+            color: var(--gray-500);
+            font-family: 'Open Sans', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-text p {
+            font-size: 1.05rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .contact-text a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-text a:hover {
+            color: var(--primary-dark);
+        }
+
+        /* Hours */
+        .hours-section {
+            background: var(--gray-100);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            margin-bottom: 2rem;
+        }
+
+        .hours-section h3 {
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .hours-list {
+            list-style: none;
+        }
+
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--gray-200);
+            font-size: 0.95rem;
+        }
+
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+
+        .hours-list span:first-child {
+            color: var(--gray-700);
+        }
+
+        .hours-list span:last-child {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        /* Form */
+        .form-container {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .form-header {
+            margin-bottom: 2rem;
+        }
+
+        .form-header h2 {
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-header p {
+            color: var(--gray-500);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group label .required {
+            color: var(--primary);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            border: 2px solid var(--gray-200);
+            border-radius: var(--radius-sm);
+            transition: all 0.3s ease;
+            background: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(158, 30, 38, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Form Error Styles */
+        .form-group.has-error input,
+        .form-group.has-error select,
+        .form-group.has-error textarea {
+            border-color: #DC2626;
+            background-color: #FEF2F2;
+        }
+
+        .form-group.has-error input:focus,
+        .form-group.has-error select:focus,
+        .form-group.has-error textarea:focus {
+            border-color: #DC2626;
+            box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.1);
+        }
+
+        .error-message {
+            display: none;
+            font-size: 0.85rem;
+            color: #DC2626;
+            margin-top: 0.5rem;
+        }
+
+        .form-group.has-error .error-message {
+            display: block;
+        }
+
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23737373' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 2rem;
+            margin-top: 0.5rem;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .radio-option input {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: var(--primary);
+        }
+
+        .radio-option span {
+            font-size: 0.95rem;
+            color: var(--gray-700);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: var(--radius-full);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn-primary {
+            background: var(--gradient-gold);
+            color: var(--dark);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(255, 187, 2, 0.4);
+        }
+
+        .form-note {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--gray-500);
+        }
+
+        /* Success Message (hidden by default) */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin: 0 auto 1.5rem;
+            animation: bounceIn 0.6s ease;
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .success-message h3 {
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .success-message p {
+            color: var(--gray-500);
+            font-size: 1.1rem;
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 0 2rem 6rem;
+        }
+
+        .map-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .map-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .map-header h2 {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        .map-wrapper {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            height: 400px;
+            background: var(--gray-200);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .map-placeholder {
+            text-align: center;
+            color: var(--gray-500);
+        }
+
+        .map-placeholder .icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        /* Footer */
+        footer {
+            background: #0D0D0D;
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand .logo {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .footer-column h4 {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.75);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.95rem;
+        }
+
+        .footer-contact-item svg {
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .page-hero {
+                padding: 8rem 1.5rem 4rem;
+            }
+
+            .section {
+                padding: 4rem 1.5rem;
+            }
+
+            .form-container {
+                padding: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .radio-group {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+
+        /* ============================================
+           ACCESSIBILITY - Focus Indicators
+           ============================================ */
+        a:focus,
+        button:focus,
+        input:focus,
+        select:focus,
+        textarea:focus,
+        [tabindex]:focus {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        a:focus:not(:focus-visible),
+        button:focus:not(:focus-visible) {
+            outline: none;
+        }
+
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        select:focus-visible,
+        textarea:focus-visible,
+        [tabindex]:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .skip-to-content {
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: var(--primary);
+            padding: 1rem 2rem;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            text-decoration: none;
+            z-index: 10000;
+            transition: top 0.3s ease;
+        }
+
+        .skip-to-content:focus {
+            top: 10px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav id="navbar" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">
+                    <img src="assets/logo.avif" alt="Family Taekwondo School Logo" width="65" height="65">
+                </span>
+                <div class="logo-text">Family TKD<span>School</span></div>
+            </a>
+            <ul class="nav-links" id="mobileNav">
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html" class="nav-cta active" aria-current="page">Free Trial</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main-content">
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <h1>Start Your <span>Journey</span></h1>
+            <p>Your first step towards becoming a champion begins with a free trial class</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h2>Get in <span>Touch</span></h2>
+                    <p class="contact-intro">We'd love to hear from you! Whether you have questions about our programs or want to schedule your free trial class, our team is here to help.</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">&#128205;</div>
+                            <div class="contact-text">
+                                <h4>Visit Us</h4>
+                                <p>11940 SW 8th Street<br>Miami, FL 33184</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">&#128222;</div>
+                            <div class="contact-text">
+                                <h4>Call Us</h4>
+                                <p><a href="tel:+13052259779">(305) 225-9779</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">&#128231;</div>
+                            <div class="contact-text">
+                                <h4>Email Us</h4>
+                                <p><a href="mailto:familytkdschool@yahoo.com">familytkdschool@yahoo.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hours-section">
+                        <h3>Class Hours</h3>
+                        <ul class="hours-list">
+                            <li>
+                                <span>Monday - Friday</span>
+                                <span>4:00 PM - 9:00 PM</span>
+                            </li>
+                            <li>
+                                <span>Saturday</span>
+                                <span>9:00 AM - 1:00 PM</span>
+                            </li>
+                            <li>
+                                <span>Sunday</span>
+                                <span>Closed</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="form-container">
+                    <div class="form-header">
+                        <h2>Book Your Free Trial</h2>
+                        <p>Fill out the form below and we'll contact you to schedule your class</p>
+                    </div>
+
+                    <form id="trialForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="parentName">Parent/Guardian Name <span class="required">*</span><span class="sr-only">(required)</span></label>
+                                <input type="text" id="parentName" name="parentName" required aria-required="true" placeholder="Your full name">
+                                <span class="error-message" id="parentName-error">Please enter your name</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="studentName">Student Name <span class="required">*</span><span class="sr-only">(required)</span></label>
+                                <input type="text" id="studentName" name="studentName" required aria-required="true" placeholder="Student's full name">
+                                <span class="error-message" id="studentName-error">Please enter the student's name</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="studentAge">Student Age <span class="required">*</span><span class="sr-only">(required)</span></label>
+                                <input type="number" id="studentAge" name="studentAge" required aria-required="true" min="3" max="99" placeholder="Age">
+                                <span class="error-message" id="studentAge-error">Please enter a valid age (3-99)</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="program">Program of Interest <span class="required">*</span><span class="sr-only">(required)</span></label>
+                                <select id="program" name="program" required aria-required="true">
+                                    <option value="">Select a program</option>
+                                    <option value="little-ninjas">Little Ninjas (Ages 3-6)</option>
+                                    <option value="kids">Kids Program (Ages 7-12)</option>
+                                    <option value="teens">Teens Program (Ages 13-17)</option>
+                                    <option value="adults">Adult Program (18+)</option>
+                                    <option value="special-needs">Special Needs Program (FREE)</option>
+                                    <option value="kickboxing">Adults Kickboxing</option>
+                                    <option value="bootcamp">Boot Camp</option>
+                                    <option value="not-sure">Not Sure - Need Guidance</option>
+                                </select>
+                                <span class="error-message" id="program-error">Please select a program</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address <span class="required">*</span><span class="sr-only">(required)</span></label>
+                                <input type="email" id="email" name="email" required aria-required="true" placeholder="your@email.com">
+                                <span class="error-message" id="email-error">Please enter a valid email address</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number <span class="required">*</span><span class="sr-only">(required)</span></label>
+                                <input type="tel" id="phone" name="phone" required aria-required="true" placeholder="(305) 000-0000">
+                                <span class="error-message" id="phone-error">Please enter a valid phone number</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Preferred Contact Method</label>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="contactMethod" value="phone" checked>
+                                    <span>Phone Call</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="contactMethod" value="text">
+                                    <span>Text Message</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="contactMethod" value="email">
+                                    <span>Email</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Questions or Comments</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your goals or any questions you have..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            Request Free Trial
+                            <span>&#10132;</span>
+                        </button>
+
+                        <p class="form-note">We respect your privacy. Your information will never be shared.</p>
+                    </form>
+
+                    <!-- Success Message -->
+                    <div class="success-message" id="successMessage">
+                        <div class="success-icon">&#10004;</div>
+                        <h3>Request Received!</h3>
+                        <p>Thank you for your interest. We'll contact you within 24 hours to schedule your free trial class.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-container">
+            <div class="map-header">
+                <h2>Find Us</h2>
+            </div>
+            <div class="map-wrapper">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3594.4234284561847!2d-80.3756!3d25.7617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b9a2e7e7e7e7%3A0x0!2s11940%20SW%208th%20St%2C%20Miami%2C%20FL%2033184!5e0!3m2!1sen!2sus!4v1"
+                    title="Family Taekwondo School location on Google Maps"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">
+                        <img src="assets/logo.avif" alt="Family Taekwondo School Logo" width="65" height="65">
+                    </span>
+                    <div class="logo-text">Family TKD<span>School</span></div>
+                </a>
+                <p>Building champions and transforming lives through traditional Korean Olympic Taekwondo since 2001. Miami's home for martial arts excellence.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Programs</h4>
+                <ul>
+                    <li><a href="programs.html#little-ninjas">Little Ninjas</a></li>
+                    <li><a href="programs.html#kids">Kids & Teens</a></li>
+                    <li><a href="programs.html#adults">Adults</a></li>
+                    <li><a href="special-needs.html">Special Needs</a></li>
+                    <li><a href="summer-camp.html">Summer Camp</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="schedule.html">Class Schedule</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <div class="footer-contact-item">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zM4.5 7.5a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7z"/></svg>
+                    <span>11940 SW 8th Street<br>Miami, FL 33184</span>
+                </div>
+                <div class="footer-contact-item">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/></svg>
+                    <span>(305) 225-9779</span>
+                </div>
+                <div class="footer-contact-item">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/></svg>
+                    <span>familytkdschool@yahoo.com</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Family Taekwondo School. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/family_taekwondo_school/" class="social-link" aria-label="Instagram">
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Form Validation
+        const form = document.getElementById('trialForm');
+
+        // Validation helper functions
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        function isValidPhone(phone) {
+            return /^[\d\s\-\(\)]{10,}$/.test(phone.replace(/\D/g, '').length >= 10 ? phone : '');
+        }
+
+        function showError(fieldId, show) {
+            const field = document.getElementById(fieldId);
+            const formGroup = field.closest('.form-group');
+            if (show) {
+                formGroup.classList.add('has-error');
+                field.setAttribute('aria-invalid', 'true');
+            } else {
+                formGroup.classList.remove('has-error');
+                field.removeAttribute('aria-invalid');
+            }
+        }
+
+        function validateField(field) {
+            const value = field.value.trim();
+            let isValid = true;
+
+            if (field.hasAttribute('required') && !value) {
+                isValid = false;
+            } else if (field.type === 'email' && value && !isValidEmail(value)) {
+                isValid = false;
+            } else if (field.type === 'tel' && value) {
+                const digits = value.replace(/\D/g, '');
+                isValid = digits.length >= 10;
+            } else if (field.type === 'number') {
+                const num = parseInt(value);
+                const min = parseInt(field.getAttribute('min') || 0);
+                const max = parseInt(field.getAttribute('max') || 999);
+                isValid = !isNaN(num) && num >= min && num <= max;
+            }
+
+            showError(field.id, !isValid);
+            return isValid;
+        }
+
+        // Add blur validation to required fields
+        form.querySelectorAll('input[required], select[required]').forEach(field => {
+            field.addEventListener('blur', function() {
+                validateField(this);
+            });
+
+            // Clear error on input
+            field.addEventListener('input', function() {
+                if (this.closest('.form-group').classList.contains('has-error')) {
+                    validateField(this);
+                }
+            });
+        });
+
+        // Form submission with validation
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            let isFormValid = true;
+
+            // Validate all required fields
+            this.querySelectorAll('input[required], select[required]').forEach(field => {
+                if (!validateField(field)) {
+                    isFormValid = false;
+                }
+            });
+
+            if (isFormValid) {
+                // Hide form and show success message
+                this.style.display = 'none';
+                document.getElementById('successMessage').classList.add('show');
+
+                // In production, you would send the form data to a server here
+                console.log('Form submitted');
+            } else {
+                // Focus first invalid field
+                const firstError = this.querySelector('.has-error input, .has-error select');
+                if (firstError) {
+                    firstError.focus();
+                }
+            }
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.contact-item, .form-container').forEach((el, index) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = `all 0.6s ease ${index * 0.1}s`;
+            observer.observe(el);
+        });
+    
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        if (mobileMenuBtn && mobileNav) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuBtn.classList.toggle('active');
+                mobileNav.classList.toggle('active');
+                mobileMenuBtn.setAttribute('aria-expanded', mobileNav.classList.contains('active'));
+                document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+            });
+            mobileNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuBtn.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+    </script>
+</body>
+</html>

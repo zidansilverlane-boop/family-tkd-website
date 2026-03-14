@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Belt Team | Family Taekwondo School - Miami, FL</title>
+    <link rel="icon" type="image/avif" href="assets/logo.avif">
+    <meta name="description" content="Join Family Taekwondo School's elite Black Belt Team in Miami. Competition-focused training in Olympic sparring, poomsae, breaking, and self-defense for dedicated martial artists.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1E3A8A;
+            --primary-dark: #1E2D5B;
+            --secondary: #DC2626;
+            --secondary-dark: #B91C1C;
+            --accent: #FFBB02;
+            --accent-dark: #E5A800;
+            --dark: #0F172A;
+            --light: #F8FAFC;
+            --gray-100: #F1F5F9;
+            --gray-200: #E2E8F0;
+            --gray-300: #CBD5E1;
+            --gray-500: #64748B;
+            --gray-700: #334155;
+            --white: #FFFFFF;
+
+            --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            --gradient-gold: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.15);
+            --shadow-lg: 0 10px 40px rgba(0,0,0,0.2);
+            --shadow-gold: 0 4px 20px rgba(255, 187, 2, 0.3);
+
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-full: 50px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0.75rem 2rem;
+            background: transparent;
+            transition: all 0.4s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow-md);
+            padding: 0.5rem 2rem;
+        }
+
+        nav.scrolled .logo {
+            color: var(--primary);
+        }
+
+        nav.scrolled .logo-text span {
+            color: var(--secondary);
+        }
+
+        nav.scrolled .nav-links a {
+            color: var(--dark);
+        }
+
+        nav.scrolled .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: color 0.3s ease;
+        }
+
+        .logo-icon {
+            width: 65px;
+            height: 65px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .logo:hover .logo-icon {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 8px rgba(255, 187, 2, 0.5));
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-text span {
+            color: var(--accent);
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--gradient-gold) !important;
+            color: #FFFFFF !important;
+            padding: 0.75rem 1.5rem !important;
+            border-radius: var(--radius-full);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled .mobile-menu-btn span {
+            background: var(--accent);
+        }
+
+        /* Page Hero */
+        .page-hero {
+            background: var(--gradient-primary);
+            padding: 10rem 2rem 6rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: var(--light);
+            clip-path: polygon(0 100%, 100% 100%, 100% 0);
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--accent);
+            padding: 0.5rem 1.5rem;
+            border-radius: var(--radius-full);
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--white);
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+        }
+
+        .page-hero h1 span {
+            color: var(--accent);
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.4s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 6rem 2rem;
+        }
+
+        .section-alt {
+            background: var(--gray-100);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Intro Section */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .intro-content h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        .intro-content h2 span {
+            color: var(--primary);
+        }
+
+        .intro-content p {
+            font-size: 1.1rem;
+            color: var(--gray-700);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .intro-visual {
+            position: relative;
+        }
+
+        .intro-image {
+            aspect-ratio: 4/3;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .intro-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .intro-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Training Areas Grid */
+        .training-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .training-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .training-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .training-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(30, 58, 138, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .training-card:hover .training-icon {
+            background: var(--primary);
+            color: var(--white);
+            transform: scale(1.1);
+        }
+
+        .training-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: var(--accent);
+        }
+
+        .training-card p {
+            color: var(--gray-500);
+            font-size: 0.95rem;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header span {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .section-header p {
+            color: var(--gray-500);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Team Section */
+        .team-section {
+            background: var(--gradient-primary);
+            padding: 6rem 2rem;
+            color: var(--white);
+        }
+
+        .team-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .team-header span {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .team-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+        }
+
+        .team-header p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .team-photos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .team-photo {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            aspect-ratio: 4/3;
+        }
+
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .team-photo:hover img {
+            transform: scale(1.05);
+        }
+
+        .team-caption {
+            text-align: center;
+            margin-top: 2rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+            font-style: italic;
+        }
+
+        /* Achievements Section */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .achievement-card {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .achievement-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--secondary);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-label {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-card p {
+            color: var(--gray-500);
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 2rem;
+            text-align: center;
+            background: var(--light);
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            color: var(--accent);
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: var(--gray-700);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: var(--radius-full);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--gradient-gold);
+            color: var(--dark);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(255, 187, 2, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--gradient-primary);
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(30, 58, 138, 0.3);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(30, 58, 138, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: #0D0D0D;
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand .logo {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .footer-column h4 {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.75);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.95rem;
+        }
+
+        .footer-contact-item svg {
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .intro-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .intro-visual {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .training-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .achievements-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .team-photos {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex !important;
+                flex-direction: column;
+                position: fixed;
+                top: 0; left: 0; right: 0; bottom: 0;
+                background: rgba(15, 23, 42, 0.97);
+                z-index: 999;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+            }
+
+            .nav-links.active a { color: var(--white) !important; font-size: 1.2rem; }
+
+            .mobile-menu-btn {
+                display: flex;
+                z-index: 1001;
+            }
+
+            .page-hero {
+                padding: 8rem 1.5rem 4rem;
+            }
+
+            .section {
+                padding: 4rem 1.5rem;
+            }
+
+            .training-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .achievements-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .team-photos {
+                grid-template-columns: 1fr;
+            }
+
+            .team-section {
+                padding: 4rem 1.5rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+
+        /* ============================================
+           ACCESSIBILITY - Focus Indicators
+           ============================================ */
+        a:focus,
+        button:focus,
+        input:focus,
+        select:focus,
+        textarea:focus,
+        [tabindex]:focus {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        a:focus:not(:focus-visible),
+        button:focus:not(:focus-visible) {
+            outline: none;
+        }
+
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        select:focus-visible,
+        textarea:focus-visible,
+        [tabindex]:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .skip-to-content {
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: var(--primary);
+            padding: 1rem 2rem;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            text-decoration: none;
+            z-index: 10000;
+            transition: top 0.3s ease;
+        }
+
+        .skip-to-content:focus {
+            top: 10px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav id="navbar" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><img src="assets/logo.avif" alt="Family Taekwondo School Logo" width="65" height="65"></span>
+                <div class="logo-text">Family TKD<span>School</span></div>
+            </a>
+            <ul class="nav-links" id="mobileNav">
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html" class="nav-cta">Free Trial</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main-content">
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <span class="hero-badge">Competition Excellence</span>
+            <h1>Black Belt <span>Team</span></h1>
+            <p>Elite competition training for dedicated martial artists pursuing excellence at the highest level</p>
+        </div>
+    </section>
+
+    <!-- Team Intro Section -->
+    <section class="section">
+        <div class="container">
+            <div class="intro-grid">
+                <div class="intro-content">
+                    <h2>Compete. <span>Conquer.</span> Repeat.</h2>
+                    <p>The Black Belt Team at Family Taekwondo School is our elite competition program, designed for students who want to take their martial arts to the next level. Under the guidance of Master Vicente Albuerne, our competitors train with intensity, discipline, and purpose.</p>
+                    <p>Whether you're preparing for your first local tournament or aiming for national and international championships, our program provides the advanced technical training, strategic conditioning, and mental preparation you need to succeed on the competition floor.</p>
+                    <p>Our team members represent Family Taekwondo School at tournaments throughout Florida and across the country, consistently bringing home medals and making our school proud.</p>
+                </div>
+                <div class="intro-visual">
+                    <div class="intro-image">
+                        <img src="assets/images/black-belt-team-competition.jpg" alt="Family Taekwondo School Black Belt Team at a tournament competition" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Train Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span>Training Disciplines</span>
+                <h2>What We Train</h2>
+                <p>Our competition program covers all major Taekwondo disciplines to develop well-rounded martial artists</p>
+            </div>
+            <div class="training-grid">
+                <div class="training-card">
+                    <div class="training-icon">&#129354;</div>
+                    <h3>Olympic Sparring</h3>
+                    <p>Full-contact competitive sparring following World Taekwondo rules. Speed, timing, and strategy training for tournament-ready fighters.</p>
+                </div>
+                <div class="training-card">
+                    <div class="training-icon">&#129336;</div>
+                    <h3>Forms (Poomsae)</h3>
+                    <p>Precision-focused training in traditional and freestyle forms. Every stance, block, and strike executed with power and perfection.</p>
+                </div>
+                <div class="training-card">
+                    <div class="training-icon">&#9994;</div>
+                    <h3>Breaking</h3>
+                    <p>Power breaking and speed breaking techniques that demonstrate focus, strength, and technical mastery at competition level.</p>
+                </div>
+                <div class="training-card">
+                    <div class="training-icon">&#128737;</div>
+                    <h3>Self-Defense</h3>
+                    <p>Practical self-defense techniques rooted in traditional Taekwondo. Real-world application of martial arts skills and awareness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Photos Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="team-header">
+                <span>Our Competitors</span>
+                <h2>Meet the Team</h2>
+                <p>Dedicated martial artists united by passion, discipline, and the pursuit of excellence</p>
+            </div>
+            <div class="team-photos">
+                <div class="team-photo">
+                    <img src="assets/images/black-belt-team-group.jpg" alt="Master Vicente with teen and adult Black Belt Team students at Family Taekwondo School" loading="lazy">
+                </div>
+                <div class="team-photo">
+                    <img src="assets/images/black-belt-team-group-2.jpg" alt="Black Belt Team group photo with Master Vicente at the school" loading="lazy">
+                </div>
+            </div>
+            <p class="team-caption">Master Vicente Albuerne with members of the Family Taekwondo School Black Belt Team</p>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span>Our Track Record</span>
+                <h2>Achievements &amp; Highlights</h2>
+                <p>Years of dedication reflected in results on the competition floor</p>
+            </div>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-number">200+</div>
+                    <div class="achievement-label">Medals Won</div>
+                    <p>Gold, silver, and bronze medals earned at local, state, and national competitions</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-number">50+</div>
+                    <div class="achievement-label">Tournaments</div>
+                    <p>Competitions entered across Florida and nationwide since the team's founding</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-number">20+</div>
+                    <div class="achievement-label">Years Competing</div>
+                    <p>Over two decades of building champions and representing Miami on the national stage</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-number">30+</div>
+                    <div class="achievement-label">Active Members</div>
+                    <p>Teen and adult competitors currently training and competing with the Black Belt Team</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Compete at the Highest Level?</h2>
+            <p>Whether you're an experienced black belt or an advanced color belt looking to start competing, the Black Belt Team is where champions are made. Contact us to learn about joining.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="contact.html" class="btn btn-secondary">Join the Team</a>
+                <a href="tel:+13052259779" class="btn btn-primary">Call (305) 225-9779</a>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon"><img src="assets/logo.avif" alt="Family Taekwondo School Logo" width="65" height="65"></span>
+                    <div class="logo-text">Family TKD<span>School</span></div>
+                </a>
+                <p>Building champions and transforming lives through traditional Korean Olympic Taekwondo since 2001. Miami's home for martial arts excellence.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Programs</h4>
+                <ul>
+                    <li><a href="programs.html#little-ninjas">Little Ninjas</a></li>
+                    <li><a href="programs.html#kids">Kids & Teens</a></li>
+                    <li><a href="programs.html#adults">Adults</a></li>
+                    <li><a href="programs.html#after-school">After School</a></li>
+                    <li><a href="summer-camp.html">Summer Camp</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="schedule.html">Class Schedule</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <div class="footer-contact-item">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zM4.5 7.5a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7z"/></svg>
+                    <span>11940 SW 8th Street<br>Miami, FL 33184</span>
+                </div>
+                <div class="footer-contact-item">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/></svg>
+                    <span>(305) 225-9779</span>
+                </div>
+                <div class="footer-contact-item">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/></svg>
+                    <span>familytkdschool@yahoo.com</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Family Taekwondo School. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/family_taekwondo_school/" class="social-link" aria-label="Instagram">
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.training-card, .achievement-card, .intro-grid, .team-photo').forEach((el, index) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = `all 0.6s ease ${index * 0.1}s`;
+            observer.observe(el);
+        });
+
+        // Fallback: reveal any elements still hidden after 2 seconds
+        setTimeout(() => {
+            document.querySelectorAll('.training-card, .achievement-card, .intro-grid, .team-photo').forEach(el => {
+                if (el.style.opacity === '0') {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }
+            });
+        }, 2000);
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        if (mobileMenuBtn && mobileNav) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuBtn.classList.toggle('active');
+                mobileNav.classList.toggle('active');
+                mobileMenuBtn.setAttribute('aria-expanded', mobileNav.classList.contains('active'));
+                document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+            });
+            mobileNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuBtn.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+    </script>
+</body>
+</html>

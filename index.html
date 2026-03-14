@@ -781,7 +781,7 @@
            ============================================ */
         .programs-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
         }
 
@@ -819,6 +819,14 @@
 
         .program-card:nth-child(4)::before {
             background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+        }
+
+        .program-card:nth-child(5)::before {
+            background: linear-gradient(135deg, #FF6B35 0%, #E55A2B 100%);
+        }
+
+        .program-card:nth-child(6)::before {
+            background: linear-gradient(135deg, #1A1A1A 0%, #404040 100%);
         }
 
         .program-card:hover {
@@ -865,6 +873,14 @@
 
         .program-card:nth-child(4) .program-image {
             background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+        }
+
+        .program-card:nth-child(5) .program-image {
+            background: linear-gradient(135deg, #FF6B35 0%, #E55A2B 100%);
+        }
+
+        .program-card:nth-child(6) .program-image {
+            background: linear-gradient(135deg, #1A1A1A 0%, #404040 100%);
         }
 
         .program-badge {
@@ -1473,6 +1489,7 @@
         .stagger-children.active > *:nth-child(4) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
         .stagger-children.active > *:nth-child(5) { transition-delay: 0.5s; opacity: 1; transform: translateY(0); }
         .stagger-children.active > *:nth-child(6) { transition-delay: 0.6s; opacity: 1; transform: translateY(0); }
+        .stagger-children.active > *:nth-child(6) { transition-delay: 0.6s; opacity: 1; transform: translateY(0); }
 
         /* ============================================
            RESPONSIVE DESIGN
@@ -1806,7 +1823,7 @@
             <div class="programs-grid stagger-children">
                 <div class="program-card">
                     <div class="program-image">
-                        <img src="assets/images/little-ninja-class-1.jpg" alt="Little Ninjas class - young children learning Taekwondo basics" loading="lazy">
+                        <img src="assets/images/little-ninjas-sparring-1.jpg" alt="Little Ninjas class - young children in sparring gear" loading="lazy">
                     </div>
                     <div class="program-content">
                         <h3>Little Ninjas</h3>
@@ -1842,6 +1859,26 @@
                         <h3>After School</h3>
                         <p>School pickup, homework time, snacks, and daily Taekwondo training in a safe environment.</p>
                         <a href="programs.html#after-school" class="program-link">Learn More <span>→</span></a>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="assets/images/summer-camp-registration.jpg" alt="Summer Camp martial arts program for kids" loading="lazy">
+                    </div>
+                    <div class="program-content">
+                        <h3>Summer Camp</h3>
+                        <p>Action-packed summer martial arts camp. Taekwondo, games, arts & crafts, and character building.</p>
+                        <a href="summer-camp.html" class="program-link">Learn More <span>→</span></a>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="assets/images/black-belt-team-competition.jpg" alt="Black Belt Team at competition" loading="lazy">
+                    </div>
+                    <div class="program-content">
+                        <h3>Black Belt Team</h3>
+                        <p>Elite competition training. Represent Family TKD at state, national, and international tournaments.</p>
+                        <a href="black-belt-team.html" class="program-link">Learn More <span>→</span></a>
                     </div>
                 </div>
             </div>

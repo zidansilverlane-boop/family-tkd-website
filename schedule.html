@@ -713,8 +713,23 @@
                 display: none;
             }
 
+            .nav-links.active {
+                display: flex !important;
+                flex-direction: column;
+                position: fixed;
+                top: 0; left: 0; right: 0; bottom: 0;
+                background: rgba(15, 23, 42, 0.97);
+                z-index: 999;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+            }
+
+            .nav-links.active a { color: var(--white) !important; font-size: 1.2rem; }
+
             .mobile-menu-btn {
                 display: flex;
+                z-index: 1001;
             }
 
             .page-hero {

@@ -87,7 +87,7 @@
 
         .logo {
             font-family: 'Oswald', sans-serif;
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--white);
             text-decoration: none;
@@ -593,7 +593,19 @@
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            .mobile-menu-btn { display: flex; }
+            .nav-links.active {
+                display: flex !important;
+                flex-direction: column;
+                position: fixed;
+                top: 0; left: 0; right: 0; bottom: 0;
+                background: rgba(15, 23, 42, 0.97);
+                z-index: 999;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+            }
+            .nav-links.active a { color: var(--white) !important; font-size: 1.2rem; }
+            .mobile-menu-btn { display: flex; z-index: 1001; }
             .page-hero { padding: 8rem 1.5rem 4rem; }
             .section { padding: 4rem 1.5rem; }
             .events-grid { grid-template-columns: 1fr; }
@@ -700,8 +712,8 @@
             <div class="events-grid">
                 <div class="event-card">
                     <div class="event-date">
-                        <div class="day">15</div>
-                        <div class="month">March 2025</div>
+                        <div class="day">14</div>
+                        <div class="month">March 2026</div>
                     </div>
                     <div class="event-content">
                         <span class="event-badge">Belt Test</span>
@@ -713,8 +725,8 @@
 
                 <div class="event-card">
                     <div class="event-date" style="background: var(--gradient-gold); color: var(--accent);">
-                        <div class="day">5-6</div>
-                        <div class="month">April 2025</div>
+                        <div class="day">4-5</div>
+                        <div class="month">April 2026</div>
                     </div>
                     <div class="event-content">
                         <span class="event-badge">Competition</span>
@@ -726,8 +738,8 @@
 
                 <div class="event-card">
                     <div class="event-date">
-                        <div class="day">26</div>
-                        <div class="month">April 2025</div>
+                        <div class="day">25</div>
+                        <div class="month">April 2026</div>
                     </div>
                     <div class="event-content">
                         <span class="event-badge">Community</span>
@@ -739,8 +751,8 @@
 
                 <div class="event-card">
                     <div class="event-date" style="background: linear-gradient(135deg, #7B2D8E, #5A1F68);">
-                        <div class="day">10</div>
-                        <div class="month">May 2025</div>
+                        <div class="day">9</div>
+                        <div class="month">May 2026</div>
                     </div>
                     <div class="event-content">
                         <span class="event-badge">Special Event</span>
@@ -752,8 +764,8 @@
 
                 <div class="event-card">
                     <div class="event-date" style="background: var(--gradient-gold); color: var(--accent);">
-                        <div class="day">1-5</div>
-                        <div class="month">July 2025</div>
+                        <div class="day">6-10</div>
+                        <div class="month">July 2026</div>
                     </div>
                     <div class="event-content">
                         <span class="event-badge">Competition</span>
@@ -765,8 +777,8 @@
 
                 <div class="event-card">
                     <div class="event-date" style="background: linear-gradient(135deg, #FF6B35, #E55A2B);">
-                        <div class="day">9</div>
-                        <div class="month">June 2025</div>
+                        <div class="day">8</div>
+                        <div class="month">June 2026</div>
                     </div>
                     <div class="event-content">
                         <span class="event-badge">Camp</span>
@@ -790,24 +802,24 @@
                 <div class="news-featured">
                     <div class="news-featured-image"><img src="assets/images/news-event-photo.jpg" alt="Team FTS brings home 12 medals from Regional Championship" loading="lazy"></div>
                     <div class="news-featured-content">
-                        <span class="news-date">January 15, 2025</span>
+                        <span class="news-date">March 1, 2026</span>
                         <h3>Team FTS Brings Home 12 Medals from Regional Championship</h3>
                         <p>Our competition team had an outstanding performance at the South Florida Regional Championship, earning 5 gold, 4 silver, and 3 bronze medals across multiple divisions. Congratulations to all our athletes who represented Family Taekwondo School with excellence and sportsmanship. Special recognition goes to Maria Santos (gold in Junior Forms) and Kevin Rodriguez (gold in Teen Sparring) who will advance to state finals.</p>
                     </div>
                 </div>
                 <div class="news-sidebar">
                     <div class="news-item">
-                        <span class="news-date">January 10, 2025</span>
+                        <span class="news-date">February 15, 2026</span>
                         <h4>New Kickboxing Class Added</h4>
                         <p>We're adding an additional adult kickboxing class on Saturday mornings. Perfect for those who want to train on weekends!</p>
                     </div>
                     <div class="news-item">
-                        <span class="news-date">January 5, 2025</span>
+                        <span class="news-date">February 1, 2026</span>
                         <h4>Welcome New Black Belts</h4>
                         <p>Congratulations to our newest 1st Dan black belts: Sarah, Miguel, and Emma. Your dedication inspires us all!</p>
                     </div>
                     <div class="news-item">
-                        <span class="news-date">December 20, 2024</span>
+                        <span class="news-date">January 10, 2026</span>
                         <h4>Holiday Schedule Update</h4>
                         <p>Thank you for a wonderful year! Regular classes resume January 2nd. Happy holidays to our FTS family!</p>
                     </div>
@@ -827,22 +839,22 @@
                 <div class="result-card">
                     <div class="result-medal">&#129351;</div>
                     <h4>Maria Santos</h4>
-                    <p>Gold - Junior Forms<br>Regional Championship 2025</p>
+                    <p>Gold - Junior Forms<br>Regional Championship 2026</p>
                 </div>
                 <div class="result-card">
                     <div class="result-medal">&#129351;</div>
                     <h4>Kevin Rodriguez</h4>
-                    <p>Gold - Teen Sparring<br>Regional Championship 2025</p>
+                    <p>Gold - Teen Sparring<br>Regional Championship 2026</p>
                 </div>
                 <div class="result-card">
                     <div class="result-medal">&#129352;</div>
                     <h4>Isabella Gomez</h4>
-                    <p>Silver - Kids Forms<br>Regional Championship 2025</p>
+                    <p>Silver - Kids Forms<br>Regional Championship 2026</p>
                 </div>
                 <div class="result-card">
                     <div class="result-medal">&#129353;</div>
                     <h4>David Chen</h4>
-                    <p>Bronze - Adult Sparring<br>Regional Championship 2025</p>
+                    <p>Bronze - Adult Sparring<br>Regional Championship 2026</p>
                 </div>
             </div>
         </div>

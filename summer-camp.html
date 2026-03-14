@@ -92,7 +92,7 @@
 
         .logo {
             font-family: 'Oswald', sans-serif;
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--white);
             text-decoration: none;
@@ -463,7 +463,6 @@
 
         .form-group input:focus,
         .form-group select:focus {
-            outline: none;
             border-color: var(--orange);
         }
 
@@ -620,7 +619,19 @@
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            .mobile-menu-btn { display: flex; }
+            .nav-links.active {
+                display: flex !important;
+                flex-direction: column;
+                position: fixed;
+                top: 0; left: 0; right: 0; bottom: 0;
+                background: rgba(15, 23, 42, 0.97);
+                z-index: 999;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+            }
+            .nav-links.active a { color: var(--white) !important; font-size: 1.2rem; }
+            .mobile-menu-btn { display: flex; z-index: 1001; }
             .page-hero { padding: 8rem 1.5rem 4rem; }
             .section { padding: 4rem 1.5rem; }
             .activities-grid { grid-template-columns: 1fr; }
@@ -746,6 +757,7 @@
                 <li><a href="schedule.html">Schedule</a></li>
                 <li><a href="pricing.html">Pricing</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="events.html">Events</a></li>
                 <li><a href="contact.html" class="nav-cta">Free Trial</a></li>
             </ul>
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
@@ -890,14 +902,14 @@
                             <label for="session">Preferred Session <span class="required">*</span><span class="sr-only">(required)</span></label>
                             <select id="session" required aria-required="true">
                                 <option value="">Select a session</option>
-                                <option value="june1">June 9-13, 2025</option>
-                                <option value="june2">June 16-20, 2025</option>
-                                <option value="june3">June 23-27, 2025</option>
-                                <option value="july1">July 7-11, 2025</option>
-                                <option value="july2">July 14-18, 2025</option>
-                                <option value="july3">July 21-25, 2025</option>
-                                <option value="august1">August 4-8, 2025</option>
-                                <option value="august2">August 11-15, 2025</option>
+                                <option value="june1">June 8-12, 2026</option>
+                                <option value="june2">June 15-19, 2026</option>
+                                <option value="june3">June 22-26, 2026</option>
+                                <option value="july1">July 6-10, 2026</option>
+                                <option value="july2">July 13-17, 2026</option>
+                                <option value="july3">July 20-24, 2026</option>
+                                <option value="august1">August 3-7, 2026</option>
+                                <option value="august2">August 10-14, 2026</option>
                             </select>
                             <span class="error-message" id="session-error">Please select a session</span>
                         </div>
@@ -1042,10 +1054,17 @@
             });
 
             if (isFormValid) {
-                // Hide form and show success message
+                // Send form data via mailto
+                const formData = new FormData(this);
+                const lines = [];
+                formData.forEach((value, key) => { if (value) lines.push(key + ': ' + value); });
+                const subject = encodeURIComponent('Summer Camp Registration - Family TKD Website');
+                const body = encodeURIComponent(lines.join('\n'));
+                window.open('mailto:familytkdschool@yahoo.com?subject=' + subject + '&body=' + body, '_self');
+
+                // Show success message
                 this.style.display = 'none';
                 document.getElementById('successMessage').classList.add('show');
-                console.log('Summer camp form submitted');
             } else {
                 const firstError = this.querySelector('.has-error input, .has-error select');
                 if (firstError) {

@@ -1052,17 +1052,29 @@
             });
 
             if (isFormValid) {
-                // Send form data via mailto
-                const formData = new FormData(this);
-                const lines = [];
-                formData.forEach((value, key) => { if (value) lines.push(key + ': ' + value); });
-                const subject = encodeURIComponent('Summer Camp Registration - Family TKD Website');
-                const body = encodeURIComponent(lines.join('\n'));
-                window.open('mailto:familytkdschool@yahoo.com?subject=' + subject + '&body=' + body, '_self');
+                const btn = this.querySelector('button[type="submit"]');
+                btn.disabled = true;
+                btn.textContent = 'Sending...';
 
-                // Show success message
-                this.style.display = 'none';
-                document.getElementById('successMessage').classList.add('show');
+                const formData = new FormData(this);
+                const data = { formType: 'summer-camp' };
+                formData.forEach((value, key) => { data[key] = value; });
+
+                fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data),
+                })
+                .then(res => {
+                    if (!res.ok) throw new Error('Send failed');
+                    this.style.display = 'none';
+                    document.getElementById('successMessage').classList.add('show');
+                })
+                .catch(() => {
+                    btn.disabled = false;
+                    btn.textContent = 'Request Info';
+                    alert('Something went wrong. Please call us at (305) 225-9779.');
+                });
             } else {
                 const firstError = this.querySelector('.has-error input, .has-error select');
                 if (firstError) {
